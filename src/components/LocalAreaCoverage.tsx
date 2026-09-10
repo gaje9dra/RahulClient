@@ -25,4 +25,3 @@ export const LocalAreaCoverage: React.FC = () => {
     </section>
   );
 };
-
