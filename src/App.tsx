@@ -9,6 +9,7 @@ import { JaipurMapGuide } from './components/JaipurMapGuide';
 import { RajasthanCities } from './components/RajasthanCities';
 import { JaipurRateChart } from './components/JaipurRateChart';
 import { LocalAreaCoverage } from './components/LocalAreaCoverage';
+import { JaipurGoogleMap } from './components/JaipurGoogleMap';
 import { AiConcierge } from './components/AiConcierge';
 import { CallCenterCapabilities } from './components/CulturalExperiences';
 import { WhyChooseUs } from './components/WhyChooseUs';
@@ -281,6 +282,9 @@ export default function App() {
 
         {/* Local Area Coverage in Every Corner of Jaipur */}
         <LocalAreaCoverage />
+
+        {/* Google Map of Jaipur — final map section before the footer */}
+        <JaipurGoogleMap />
       </main>
 
       {/* Floating Compare Drawer Bar */}
