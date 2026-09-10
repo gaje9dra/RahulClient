@@ -13,11 +13,11 @@ export const BRAND_NAME = "Sakshi Bansal Jaipur";
 export const BRAND_LOGO_PATH = "/logo.svg";
 
 // 3. CONTINUOUS HERO BACKGROUND VIDEO PATH
-// Place background.mp4 inside the 'public' folder (e.g., public/background.mp4)
+// Place background.mp4 inside the 'public' folder (e.g., public/back.mp4)
 export const HERO_VIDEO_PATH = "/back.mp4";
 
-// 4. CLIENT EDITABLE 12 HOST IMAGES (1 to 12)
-// Place 1.jpeg, 2.jpeg, ... 12.jpeg inside the 'public' folder (e.g., public/1.jpeg)
+// 4. CLIENT EDITABLE HOST IMAGES
+// Place the corresponding image files inside the 'public' folder.
 export const CLIENT_HOST_IMAGES = {
   image1: "/1.jpeg",
   image2: "/2.jpeg",
@@ -37,9 +37,10 @@ export const CLIENT_HOST_IMAGES = {
 };
 
 // 5. CLIENT CONTACT PHONE & WHATSAPP
-export const SITE_PHONE_RAW = "919315751207";
-export const SITE_PHONE_DISPLAY = "+91 93157 51207";
-export const SITE_PHONE_SHORT = "9315751207";
-export const SITE_WHATSAPP_RAW = "919315751207";
+// Primary contact intentionally left blank for future use.
+export const SITE_PHONE_RAW = "";
+export const SITE_PHONE_DISPLAY = "";
+export const SITE_PHONE_SHORT = "";
+export const SITE_WHATSAPP_RAW = "";
 export const SITE_WHATSAPP_SECONDARY_RAW = "917240493868";
 export const SITE_WHATSAPP_SECONDARY_DISPLAY = "+91 72404 93868";
