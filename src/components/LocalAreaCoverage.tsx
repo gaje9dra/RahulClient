@@ -25,9 +25,9 @@ export const LocalAreaCoverage: React.FC = () => {
   return (
     <section
       id="area-coverage"
-      className="w-full min-h-0 overflow-visible py-16 pb-24 px-4 sm:px-6 lg:px-8 bg-slate-950/80 text-slate-100 border-b border-pink-500/20"
+      className="w-full h-auto min-h-0 max-h-none overflow-visible py-16 pb-32 px-4 sm:px-6 lg:px-8 bg-slate-950/80 text-slate-100 border-b border-pink-500/20"
     >
-      <div className="w-full max-w-7xl mx-auto min-h-0">
+      <div className="w-full h-auto min-h-0 max-h-none overflow-visible max-w-7xl mx-auto">
         <div className="text-center mb-10">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-pink-500/40 bg-pink-500/10 text-pink-300 text-sm font-bold tracking-wide">
             <span>⌖</span> LOCATIONS &amp; AREA COVERAGE
@@ -38,14 +38,16 @@ export const LocalAreaCoverage: React.FC = () => {
           <p className="mt-3 text-slate-400 text-sm sm:text-base">
             Explore locations across Jaipur — click any location to explore available options.
           </p>
+          <p className="mt-2 text-xs font-bold uppercase tracking-widest text-pink-400">
+            All {JAIPUR_AREAS.length} Jaipur areas are listed below
+          </p>
         </div>
 
-        {/* All area cards remain in normal document flow on every screen size. */}
-        <div className="grid w-full min-h-0 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 auto-rows-auto">
+        <div className="grid w-full h-auto min-h-0 max-h-none overflow-visible grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 auto-rows-auto">
           {JAIPUR_AREAS.map((area, index) => (
             <article
               key={area.name}
-              className={`group min-w-0 w-full rounded-2xl border border-slate-700/70 bg-slate-950/90 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-pink-500/70 hover:shadow-[0_12px_35px_rgba(236,72,153,0.14)] ${index === 0 ? 'border-pink-500/80' : ''}`}
+              className={`group min-w-0 w-full h-auto max-h-none overflow-visible rounded-2xl border border-slate-700/70 bg-slate-950/90 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-pink-500/70 hover:shadow-[0_12px_35px_rgba(236,72,153,0.14)] ${index === 0 ? 'border-pink-500/80' : ''}`}
             >
               <div className="flex items-start justify-between gap-3">
                 <h3 className="min-w-0 break-words text-xl font-serif font-bold text-white group-hover:text-pink-200 transition-colors">
@@ -61,7 +63,7 @@ export const LocalAreaCoverage: React.FC = () => {
                 <span className="min-w-0 break-words">{area.name}, Jaipur</span>
               </div>
 
-              <p className="mt-3 text-sm leading-6 text-slate-300">
+              <p className="mt-3 text-sm leading-6 text-slate-300 break-words">
                 {area.description}
               </p>
 
