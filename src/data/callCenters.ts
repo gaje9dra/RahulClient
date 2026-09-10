@@ -1,0 +1,713 @@
+import { CallCenterFacility } from '../types';
+import { CLIENT_HOST_IMAGES } from '../config/siteConfig';
+
+export const JAIPUR_CALL_CENTER_ZONES = [
+  { id: 'all', name: 'All Zones', count: 20 },
+  { id: 'cscheme', name: 'C-Scheme & Civil Lines', location: 'C-Scheme & Civil Lines, Jaipur', description: 'Prestige cafe hubs, fine dining spots, executive lounge locations & central heritage streets.', distanceAirport: '10-11 km' },
+  { id: 'jlnmarg', name: 'JLN Marg & Malviya Nagar', location: 'JLN Marg & Malviya Nagar, Jaipur', description: 'Near World Trade Park, GT Central mall cafes, airport corridor, and high-end hotels.', distanceAirport: '4-6 km' },
+  { id: 'amer', name: 'Amer Fort & Heritage Belt', location: 'Amer Fort & Heritage Belt, Jaipur', description: 'Scenic historic spots, fort views, handicraft bazaars, and traditional cultural centers.', distanceAirport: '15-18 km' },
+  { id: 'vaishali', name: 'Vaishali Nagar', location: 'Vaishali Nagar, Jaipur', description: 'Modern dining precincts, boutique cafes, peaceful lounges, and business hotels.', distanceAirport: '12-14 km' },
+  { id: 'mansarovar', name: 'Mansarovar Belt', location: 'Mansarovar, Jaipur', description: 'Vibrant local hubs, VT Road eateries, educational and tech corridor.', distanceAirport: '10-12 km' },
+  { id: 'ajmer-road', name: 'Ajmer Road', location: 'Ajmer Road, Jaipur', description: 'Prime highway corridor with luxury resort hotels, residential towers, and dining hubs.', distanceAirport: '12-15 km' },
+  { id: 'pratap-nagar', name: 'Pratap Nagar', location: 'Pratap Nagar, Jaipur', description: 'Rapidly growing residential and institutional hub near coaching hubs and ring road.', distanceAirport: '5-7 km' },
+  { id: 'jagatpura', name: 'Jagatpura', location: 'Jagatpura, Jaipur', description: 'Modern educational and residential hub with luxury apartments and cafes.', distanceAirport: '4-6 km' },
+  { id: 'banipark', name: 'Bani Park', location: 'Bani Park, Jaipur', description: 'Heritage hotel neighborhood, quiet leafy avenues, and close proximity to Jaipur Junction.', distanceAirport: '12-14 km' },
+  { id: 'tonk-road', name: 'Tonk Road', location: 'Tonk Road, Jaipur', description: 'Major commercial artery featuring 5-star hotels, shopping centers, and convention spaces.', distanceAirport: '6-8 km' },
+  { id: 'jhotwara', name: 'Jhotwara', location: 'Jhotwara, Jaipur', description: 'Vibrant western Jaipur sector with bustling markets and comfortable residential pockets.', distanceAirport: '16-18 km' },
+  { id: 'sitapura', name: 'Sitapura', location: 'Sitapura Industrial Area, Jaipur', description: 'Key industrial and educational zone near JECC convention center and tech parks.', distanceAirport: '6-8 km' },
+  { id: 'gopalpura', name: 'Gopalpura', location: 'Gopalpura Bypass, Jaipur', description: 'Central connectivity corridor linking Tonk Road, Mansarovar, and major dining avenues.', distanceAirport: '8-10 km' },
+  { id: 'mi-road', name: 'MI Road', location: 'MI Road, Jaipur', description: 'Mirza Ismail Road - heart of Jaipur shopping, historic cinema halls, and classic eateries.', distanceAirport: '11-13 km' },
+  { id: 'durgapura', name: 'Durgapura', location: 'Durgapura, Jaipur', description: 'Upscale residential hub around Durgapura railway station and Tonk Road junction.', distanceAirport: '5-7 km' },
+];
+
+export const JAIPUR_MEETUP_ZONES = JAIPUR_CALL_CENTER_ZONES;
+
+export const JAIPUR_CALL_CENTERS: CallCenterFacility[] = [
+  {
+    id: 'ananya-sharma-host',
+    name: 'Ananya Sharma',
+    tagline: 'Cultural & Heritage Guide, Fluent English Companion & Conversation Host',
+    category: 'in-person-meetup',
+    categoryLabel: 'In-Person & Cultural Host',
+    locationZone: 'C-Scheme & Civil Lines',
+    address: 'C-Scheme Cafe Belt & JLN Marg, 302001',
+    distanceAirportKm: 10.5,
+    responseRateMinutes: 3,
+    availableToday: true,
+    supportedShifts: ['Online Call 24/7', 'In-Person Day Meetup', 'Evening Coffee & Dinner Host'],
+    rating: 4.9,
+    reviewCount: 310,
+    featured: true,
+    image: CLIENT_HOST_IMAGES.image1,
+    gallery: [
+      CLIENT_HOST_IMAGES.image1,
+      'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80'
+    ],
+    priceTier: 'Verified Local Host',
+    whatsappNumber: '+919829012345',
+    phoneNumber: '+919829012345',
+    languages: ['English (Fluent)', 'Hindi (Native)', 'Rajasthani'],
+    verifiedBadge: true,
+    highlights: [
+      'Govt Photo ID Verified & Background Checked',
+      'Expert in History, Hawa Mahal & City Palace Tours',
+      'Friendly, Empathetic & Articulate Conversation Partner',
+      'Direct WhatsApp Chat & Instant Phone Call Setup'
+    ],
+    features: [
+      'In-Person Coffee & Dining Meetup in C-Scheme / JLN Marg',
+      'Instant Online Voice & Phone Call Sessions',
+      'Cultural Tour escort for visiting guests & solo travelers',
+      'Polite, engaging social companion'
+    ],
+    floors: [
+      {
+        name: 'Online Voice Call',
+        type: 'Online Voice Call',
+        duration: 'Instant Connect',
+        description: 'Instant private voice chat on phone or audio link for friendly advice, local tips, or pleasant conversation.'
+      },
+      {
+        name: 'In-Person Meeting & Cafe Walk',
+        type: 'In-Person Meetup',
+        duration: 'Flexible Hours',
+        description: 'Meet at a verified C-Scheme or Malviya Nagar cafe. Perfect for local accompaniment, city tour, or dining partner.'
+      },
+      {
+        name: 'WhatsApp Direct Chat Pass',
+        type: 'WhatsApp Direct Chat',
+        duration: 'Direct Contact',
+        description: 'Text & voice message interaction via WhatsApp for real-time recommendations and casual chat.'
+      }
+    ],
+    description: 'Ananya is a postgraduate in Literature with 4+ years of hosting experience. Highly rated for her warmth, deep knowledge of heritage, and articulate conversational style.',
+    slaAndCompliance: 'Safety Verified: Aadhaar ID verified, police cleared. Safe public venue meetup protocol enforced.',
+    hiringAndSupportPolicy: 'Instant online connect available. Click to call or ping on WhatsApp directly.'
+  },
+  {
+    id: 'roshni-roy-host',
+    name: 'Roshni Roy',
+    tagline: 'Warm Conversationalist, Fashion Companion & Friendly Online Host',
+    category: 'online-call',
+    categoryLabel: 'Online Voice & Chat Host',
+    locationZone: 'JLN Marg & Malviya Nagar',
+    address: 'JLN Marg, Near World Trade Park, 302017',
+    distanceAirportKm: 4.8,
+    responseRateMinutes: 2,
+    availableToday: true,
+    supportedShifts: ['Online Voice Call 24/7', 'Late Night Talk', 'WhatsApp Text & Voice'],
+    rating: 4.9,
+    reviewCount: 280,
+    featured: true,
+    image: CLIENT_HOST_IMAGES.image2,
+    gallery: [
+      CLIENT_HOST_IMAGES.image2,
+      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=80'
+    ],
+    priceTier: 'Verified Local Host',
+    whatsappNumber: '+919829023456',
+    phoneNumber: '+919829023456',
+    languages: ['Hindi (Native)', 'English (Fluent)', 'Bengali'],
+    verifiedBadge: true,
+    highlights: [
+      'Sweet, Empathetic Voice Listener for Stress Release & Chat',
+      '100% Private Online Voice & Direct Phone Sessions',
+      'Available for Evening & Late Night Calls',
+      'Instant Response on WhatsApp'
+    ],
+    features: [
+      'Direct Phone Call & WhatsApp Voice Chat',
+      'Friendly daily conversation & emotional support',
+      'In-person coffee chat in JLN Marg cafes on request'
+    ],
+    floors: [
+      {
+        name: 'Direct Phone Call',
+        type: 'Online Voice Call',
+        duration: 'Instant Dial',
+        description: 'Unwind with a calm, friendly voice conversation on direct dial.'
+      },
+      {
+        name: 'WhatsApp Chat & Voice Notes',
+        type: 'WhatsApp Direct Chat',
+        duration: 'Direct Contact',
+        description: 'Direct WhatsApp audio messages and text chat for steady companionship.'
+      }
+    ],
+    description: 'Roshni is an expressive and pleasant conversation host known for her soothing voice and engaging personality. Connect with her instantly over call or message.',
+    slaAndCompliance: '100% Confidentiality & Privacy Guaranteed. Verified Resident.',
+    hiringAndSupportPolicy: 'Connect immediately on WhatsApp or Phone Dialer.'
+  },
+  {
+    id: 'priya-rathore-host',
+    name: 'Priya Rathore',
+    tagline: 'Sophisticated Companion, Dining Host & Language Coach',
+    category: 'conversation-companion',
+    categoryLabel: 'Dining & Social Companion',
+    locationZone: 'Mansarovar Belt',
+    address: 'VT Road, Mansarovar, 302020',
+    distanceAirportKm: 11.0,
+    responseRateMinutes: 4,
+    availableToday: true,
+    supportedShifts: ['Evening Dining', 'Event Escort', 'Direct Phone Call'],
+    rating: 4.8,
+    reviewCount: 290,
+    featured: true,
+    image: CLIENT_HOST_IMAGES.image3,
+    gallery: [
+      CLIENT_HOST_IMAGES.image3,
+      'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=1200&q=80'
+    ],
+    priceTier: 'Verified Local Host',
+    whatsappNumber: '+919829034567',
+    phoneNumber: '+919829034567',
+    languages: ['English (Fluent)', 'Hindi (Native)'],
+    verifiedBadge: true,
+    highlights: [
+      'Polite Company for Fine Dining & Galas',
+      'Online Accent & Spoken English Practice Partner',
+      'Direct WhatsApp Booking & Quick Dialing'
+    ],
+    features: [
+      'In-person companion for dinner dates & public gatherings',
+      'Online speech & confidence coaching calls',
+      'Direct WhatsApp access'
+    ],
+    floors: [
+      {
+        name: 'In-Person Dining Companion',
+        type: 'In-Person Meetup',
+        duration: 'Flexible Hours',
+        description: 'Accompany you to fine dining restaurants or cultural galas.'
+      },
+      {
+        name: 'Online Conversation Coach',
+        type: 'Online Voice Call',
+        duration: 'Instant Call',
+        description: 'Voice chat to practice spoken English or social communication.'
+      }
+    ],
+    description: 'Priya holds a degree in Communications and hospitality. She offers a refined presence for dining meetups and phone conversations.',
+    slaAndCompliance: 'Identity Checked & Police Verified.',
+    hiringAndSupportPolicy: 'Instant WhatsApp message or phone call response.'
+  },
+  {
+    id: 'simran-kaur-host',
+    name: 'Simran Kaur',
+    tagline: 'Nightlife & Lounge Companion, Foodie Escort & Event Host',
+    category: 'city-guide',
+    categoryLabel: 'Lounge & Nightlife Host',
+    locationZone: 'Amer Fort & Heritage Belt',
+    address: 'MI Road & Amer Fort Belt, 302002',
+    distanceAirportKm: 15.0,
+    responseRateMinutes: 5,
+    availableToday: true,
+    supportedShifts: ['Evening Lounge', 'Night Out Companion', 'Phone & WhatsApp'],
+    rating: 4.9,
+    reviewCount: 215,
+    featured: true,
+    image: CLIENT_HOST_IMAGES.image4,
+    gallery: [
+      CLIENT_HOST_IMAGES.image4,
+      'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80'
+    ],
+    priceTier: 'Verified Local Host',
+    whatsappNumber: '+919829045678',
+    phoneNumber: '+919829045678',
+    languages: ['English (Fluent)', 'Hindi (Native)', 'Punjabi'],
+    verifiedBadge: true,
+    highlights: [
+      'Expert on Top Rooftop Lounges & Nightlife Spots',
+      'Stylish, Charismatic & Fun Social Companion',
+      'Direct WhatsApp & Instant Phone Line'
+    ],
+    features: [
+      'Rooftop lounge & dining companion',
+      'Late night phone conversation',
+      'WhatsApp direct message access'
+    ],
+    floors: [
+      {
+        name: 'Nightlife & Dining Companion',
+        type: 'In-Person Meetup',
+        duration: 'Evening Hours',
+        description: 'Explore the best rooftop restaurants and evening lounges with Simran.'
+      }
+    ],
+    description: 'Simran is an energetic and outgoing host who loves nightlife, rooftop cafes, and vibrant social events.',
+    slaAndCompliance: 'Background Checked & Verified Resident.',
+    hiringAndSupportPolicy: 'Direct connection via WhatsApp or call.'
+  },
+  {
+    id: 'pooja-verma-host',
+    name: 'Pooja Verma',
+    tagline: 'Shopping & Handicrafts Guide, Local Navigator',
+    category: 'in-person-meetup',
+    categoryLabel: 'Shopping & City Host',
+    locationZone: 'Vaishali Nagar & Ajmer Road',
+    address: 'Queens Road, Vaishali Nagar, 302021',
+    distanceAirportKm: 12.5,
+    responseRateMinutes: 3,
+    availableToday: true,
+    supportedShifts: ['Bazaar Shopping Walk', 'Cafe Meetup', 'Voice Call'],
+    rating: 4.8,
+    reviewCount: 185,
+    featured: false,
+    image: CLIENT_HOST_IMAGES.image5,
+    gallery: [
+      CLIENT_HOST_IMAGES.image5,
+      'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80'
+    ],
+    priceTier: 'Verified Local Host',
+    whatsappNumber: '+919829056789',
+    phoneNumber: '+919829056789',
+    languages: ['Hindi (Native)', 'English (Fluent)'],
+    verifiedBadge: true,
+    highlights: [
+      'Expert Negotiator for Bapu Bazaar & Johari Bazaar Shopping',
+      'Knows Best Jewellery, Textiles & Handicraft Boutiques',
+      'Direct WhatsApp Chat'
+    ],
+    features: [
+      'Bazaar & Mall shopping accompaniment',
+      'City navigation and local recommendations'
+    ],
+    floors: [
+      {
+        name: 'Shopping Walk & Cafe Meetup',
+        type: 'In-Person Meetup',
+        duration: 'Daytime',
+        description: 'Explore markets, gemstone shops, and authentic eateries.'
+      }
+    ],
+    description: 'Pooja specializes in guiding visitors through local markets, textile houses, and cafe culture.',
+    slaAndCompliance: 'Aadhaar Verified Local Host.',
+    hiringAndSupportPolicy: 'Contact directly on call or WhatsApp.'
+  },
+  {
+    id: 'neha-gupta-host',
+    name: 'Neha Gupta',
+    tagline: 'C-Scheme Cafe Companion, Warm Conversational Listener',
+    category: 'conversation-companion',
+    categoryLabel: 'Cafe & Chat Companion',
+    locationZone: 'C-Scheme & Civil Lines',
+    address: 'Ramesh Marg, C-Scheme, 302001',
+    distanceAirportKm: 10.0,
+    responseRateMinutes: 4,
+    availableToday: true,
+    supportedShifts: ['Coffee Meetup', 'Online Call', 'WhatsApp Direct'],
+    rating: 4.9,
+    reviewCount: 220,
+    featured: false,
+    image: CLIENT_HOST_IMAGES.image6,
+    gallery: [
+      CLIENT_HOST_IMAGES.image6,
+      'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=1200&q=80'
+    ],
+    priceTier: 'Verified Local Host',
+    whatsappNumber: '+919829067890',
+    phoneNumber: '+919829067890',
+    languages: ['English (Fluent)', 'Hindi (Native)'],
+    verifiedBadge: true,
+    highlights: [
+      'Charming C-Scheme Cafe Host',
+      'Warm, Empathetic & Knowledgeable',
+      'Instant Phone Dialing & WhatsApp Chat'
+    ],
+    features: [
+      'In-person coffee meetings',
+      'Private online voice calls'
+    ],
+    floors: [
+      {
+        name: 'Cafe Conversation Session',
+        type: 'In-Person Meetup',
+        duration: 'Flexible',
+        description: 'Enjoy a relaxing tea/coffee chat in C-Scheme.'
+      }
+    ],
+    description: 'Neha is a gentle and well-read host who enjoys art, coffee conversations, and peaceful cafes.',
+    slaAndCompliance: 'ID & Phone Verified.',
+    hiringAndSupportPolicy: 'Reach out via WhatsApp or direct phone call.'
+  },
+  {
+    id: 'kavya-patel-host',
+    name: 'Kavya Patel',
+    tagline: 'Corporate Networking Escort, Business Delegate Companion',
+    category: 'business-host',
+    categoryLabel: 'Business & Networking Host',
+    locationZone: 'JLN Marg & Malviya Nagar',
+    address: 'JLN Marg Executive Corridor, 302017',
+    distanceAirportKm: 5.0,
+    responseRateMinutes: 3,
+    availableToday: true,
+    supportedShifts: ['Corporate Lunch', 'Conference Escort', 'Phone Call'],
+    rating: 4.9,
+    reviewCount: 195,
+    featured: false,
+    image: CLIENT_HOST_IMAGES.image7,
+    gallery: [
+      CLIENT_HOST_IMAGES.image7,
+      'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=1200&q=80'
+    ],
+    priceTier: 'Verified Local Host',
+    whatsappNumber: '+919829078901',
+    phoneNumber: '+919829078901',
+    languages: ['English (Professional)', 'Hindi (Native)', 'Gujarati'],
+    verifiedBadge: true,
+    highlights: [
+      'Professional Demeanor for Corporate Visitors',
+      'Fluent Business English & Local Hospitality',
+      'Direct Phone & WhatsApp Access'
+    ],
+    features: [
+      'Business conference accompaniment',
+      'Executive dining escort'
+    ],
+    floors: [
+      {
+        name: 'Executive Escort & Networking',
+        type: 'In-Person Meetup',
+        duration: 'Business Hours',
+        description: 'Professional accompaniment for business delegates.'
+      }
+    ],
+    description: 'Kavya provides articulate, professional company for corporate meetings, hotel conferences, and networking dinners.',
+    slaAndCompliance: 'Verified Identity & Confidentiality Guaranteed.',
+    hiringAndSupportPolicy: 'Call or WhatsApp directly.'
+  },
+  {
+    id: 'sneha-meena-host',
+    name: 'Sneha Meena',
+    tagline: 'Authentic Foodie Host & Heritage Explorer',
+    category: 'city-guide',
+    categoryLabel: 'Foodie & Culture Host',
+    locationZone: 'Mansarovar Belt',
+    address: 'Mansarovar Food Belt, 302020',
+    distanceAirportKm: 10.8,
+    responseRateMinutes: 5,
+    availableToday: true,
+    supportedShifts: ['Street Food Walks', 'Heritage Tours', 'WhatsApp Chat'],
+    rating: 4.8,
+    reviewCount: 160,
+    featured: false,
+    image: CLIENT_HOST_IMAGES.image8,
+    gallery: [
+      CLIENT_HOST_IMAGES.image8,
+      'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1200&q=80'
+    ],
+    priceTier: 'Verified Local Host',
+    whatsappNumber: '+919829089012',
+    phoneNumber: '+919829089012',
+    languages: ['Hindi (Native)', 'English (Fluent)', 'Rajasthani'],
+    verifiedBadge: true,
+    highlights: [
+      'Knows Secret Food Stalls & Royal Thali Joints',
+      'Friendly, Lively Local Explorer',
+      'Instant Phone Call & WhatsApp Connect'
+    ],
+    features: [
+      'Culinary food tours across Pink City',
+      'Cultural heritage walks'
+    ],
+    floors: [
+      {
+        name: 'Food & Culture Walk',
+        type: 'In-Person Meetup',
+        duration: 'Flexible',
+        description: 'Taste authentic Dal Baati Churma, Ghevar, and street delicacies together.'
+      }
+    ],
+    description: 'Sneha is a vibrant local who loves introducing visitors to traditional food and culture.',
+    slaAndCompliance: 'Identity & Address Verified.',
+    hiringAndSupportPolicy: 'Instant call or WhatsApp message.'
+  },
+  {
+    id: 'ria-sen-host',
+    name: 'Ria Sen',
+    tagline: 'Charming Companion for Art Shows, Music & Heritage Strolls',
+    category: 'conversation-companion',
+    categoryLabel: 'Arts & Culture Companion',
+    locationZone: 'Amer Fort & Heritage Belt',
+    address: 'Jawahar Kala Kendra & JLN Belt, 302004',
+    distanceAirportKm: 8.5,
+    responseRateMinutes: 3,
+    availableToday: true,
+    supportedShifts: ['Art Exhibition Escort', 'Cafe Chat', 'Phone Call'],
+    rating: 4.9,
+    reviewCount: 175,
+    featured: false,
+    image: CLIENT_HOST_IMAGES.image9,
+    gallery: [
+      CLIENT_HOST_IMAGES.image9,
+      'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80'
+    ],
+    priceTier: 'Verified Local Host',
+    whatsappNumber: '+919829090123',
+    phoneNumber: '+919829090123',
+    languages: ['English (Fluent)', 'Hindi (Native)'],
+    verifiedBadge: true,
+    highlights: [
+      'Passionate about Art, Literature & Fine Music',
+      'Engaging Companion for Cultural Exhibitions',
+      'Direct Phone & WhatsApp'
+    ],
+    features: [
+      'Jawahar Kala Kendra art walk companion',
+      'Quiet tea session'
+    ],
+    floors: [
+      {
+        name: 'Art & Cultural Walk',
+        type: 'In-Person Meetup',
+        duration: 'Afternoon / Evening',
+        description: 'Visit art galleries and heritage exhibitions with Ria.'
+      }
+    ],
+    description: 'Ria is an artistic and cheerful companion ideal for art lovers, literature enthusiasts, and peaceful conversations.',
+    slaAndCompliance: 'Background Verified Host.',
+    hiringAndSupportPolicy: 'WhatsApp or direct call.'
+  },
+  {
+    id: 'tanya-saxena-host',
+    name: 'Tanya Saxena',
+    tagline: 'VIP Gala & Dinner Companion, Polished Social Host',
+    category: 'conversation-companion',
+    categoryLabel: 'VIP Social Host',
+    locationZone: 'Vaishali Nagar & Ajmer Road',
+    address: 'Ajmer Road Luxury Hotel Belt, 302021',
+    distanceAirportKm: 13.5,
+    responseRateMinutes: 2,
+    availableToday: true,
+    supportedShifts: ['VIP Dinners', 'Gala Night', 'Direct Call'],
+    rating: 4.9,
+    reviewCount: 205,
+    featured: true,
+    image: CLIENT_HOST_IMAGES.image10,
+    gallery: [
+      CLIENT_HOST_IMAGES.image10,
+      'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1200&q=80'
+    ],
+    priceTier: 'Verified Local Host',
+    whatsappNumber: '+919829001234',
+    phoneNumber: '+919829001234',
+    languages: ['English (Fluent)', 'Hindi (Native)'],
+    verifiedBadge: true,
+    highlights: [
+      'High-End Event & Fine Dining Partner',
+      'Glittering Personality & Flawless Etiquette',
+      'Instant Phone & WhatsApp Access'
+    ],
+    features: [
+      'Luxury hotel dinner accompaniment',
+      'High-profile social gathering host'
+    ],
+    floors: [
+      {
+        name: 'VIP Dinner & Event Escort',
+        type: 'In-Person Meetup',
+        duration: 'Evening Session',
+        description: 'Elegant companion for luxury dinners at Taj Rambagh Palace, Oberoi Rajvilas, or Marriott.'
+      }
+    ],
+    description: 'Tanya brings grace and poise to every event. She accompanies clients to high-end dining venues and formal occasions.',
+    slaAndCompliance: 'Strict Identity & Safety Vetting.',
+    hiringAndSupportPolicy: 'Instant connect via WhatsApp or Call.'
+  },
+  {
+    id: 'divya-choudhary-host',
+    name: 'Divya Choudhary',
+    tagline: 'Fort Sunset & Photography Escort, Heritage Storyteller',
+    category: 'in-person-meetup',
+    categoryLabel: 'Heritage Photography Companion',
+    locationZone: 'C-Scheme & Civil Lines',
+    address: 'Civil Lines & Nahargarh Fort, 302006',
+    distanceAirportKm: 11.5,
+    responseRateMinutes: 4,
+    availableToday: true,
+    supportedShifts: ['Sunset Fort Tour', 'Photography Walk', 'Voice Call'],
+    rating: 4.8,
+    reviewCount: 165,
+    featured: false,
+    image: CLIENT_HOST_IMAGES.image11,
+    gallery: [
+      CLIENT_HOST_IMAGES.image11,
+      'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=1200&q=80'
+    ],
+    priceTier: 'Verified Local Host',
+    whatsappNumber: '+919829011223',
+    phoneNumber: '+919829011223',
+    languages: ['Hindi (Native)', 'English (Fluent)'],
+    verifiedBadge: true,
+    highlights: [
+      'Expert on Sunset Views & Open Air Dining',
+      'Great Photographer & Friendly Guide',
+      'Direct Dialing & WhatsApp'
+    ],
+    features: [
+      'Fort sunset & photography walk',
+      'Heritage storytelling'
+    ],
+    floors: [
+      {
+        name: 'Sunset Fort & Cafe Walk',
+        type: 'In-Person Meetup',
+        duration: 'Sunset Hours',
+        description: 'Watch the golden hour from Nahargarh with Divya.'
+      }
+    ],
+    description: 'Divya loves sunsets, photography, and showing visitors panoramic views.',
+    slaAndCompliance: 'Govt Photo ID Verified.',
+    hiringAndSupportPolicy: 'Call or WhatsApp directly.'
+  },
+  {
+    id: 'isha-merchant-host',
+    name: 'Isha Merchant',
+    tagline: 'Gentle Voice Companion, Phone Dial Listener & Night Chat Partner',
+    category: 'online-call',
+    categoryLabel: 'Voice & Call Host',
+    locationZone: 'JLN Marg & Malviya Nagar',
+    address: 'GT Central & JLN Marg, 302017',
+    distanceAirportKm: 5.5,
+    responseRateMinutes: 2,
+    availableToday: true,
+    supportedShifts: ['Phone Call 24/7', 'WhatsApp Audio Notes'],
+    rating: 4.9,
+    reviewCount: 230,
+    featured: true,
+    image: CLIENT_HOST_IMAGES.image12,
+    gallery: [
+      CLIENT_HOST_IMAGES.image12,
+      'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80'
+    ],
+    priceTier: 'Verified Local Host',
+    whatsappNumber: '+919829022334',
+    phoneNumber: '+919829022334',
+    languages: ['English (Fluent)', 'Hindi (Native)'],
+    verifiedBadge: true,
+    highlights: [
+      'Soothing Voice for Relaxation & Polite Conversation',
+      'Available 24/7 on Direct Phone Line',
+      'Instant WhatsApp Chat'
+    ],
+    features: [
+      'Direct phone audio call',
+      'WhatsApp voice messaging'
+    ],
+    floors: [
+      {
+        name: 'Direct Phone Audio Session',
+        type: 'Online Voice Call',
+        duration: 'Instant Connect',
+        description: 'Connect over direct phone call for a cheerful, refreshing chat.'
+      }
+    ],
+    description: 'Isha is an empathetic online voice host who offers calm, positive phone calls and WhatsApp messages.',
+    slaAndCompliance: 'Verified Identity.',
+    hiringAndSupportPolicy: 'Direct call or WhatsApp ping.'
+  },
+  {
+    id: 'lovely-high-profile-escort',
+    name: 'Lovely High Profile Escort',
+    tagline: '24 Years • Independent • Jaipur',
+    category: 'business-host',
+    categoryLabel: 'High Profile Escort',
+    locationZone: 'C-Scheme & Civil Lines',
+    address: 'C-Scheme & Tonk Road, Jaipur',
+    distanceAirportKm: 9.0,
+    responseRateMinutes: 1,
+    availableToday: true,
+    supportedShifts: ['Incall & Outcall 24/7', 'VIP Dinner Companion'],
+    rating: 5.0,
+    reviewCount: 420,
+    featured: true,
+    image: CLIENT_HOST_IMAGES.image13 || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80',
+    gallery: [
+      CLIENT_HOST_IMAGES.image13 || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80'
+    ],
+    priceTier: 'Verified High Profile',
+    whatsappNumber: '+919315751207',
+    phoneNumber: '+919315751207',
+    languages: ['English (Fluent)', 'Hindi (Native)'],
+    verifiedBadge: true,
+    highlights: [
+      'Hi, I\'m Lovely Kaur, High Profile girl making Jaipur nights feel top-class.',
+      'Full safe & secure always, 24/7 open, incall-outcall no problem. Payment on delivery.'
+    ],
+    features: ['Incall & Outcall Available', 'Discreet & Safe Booking'],
+    floors: [{ name: 'High Profile Service', type: 'In-Person Meetup', duration: 'Full Flexibility', description: 'Top class experience with complete privacy.' }],
+    description: 'Hi, I\'m Lovely Kaur, High Profile girl making Jaipur nights feel top-class. For real intimate sensual escape discreet passion or naughty playful stuff my high profile connections deliver the best girl service you\'ll ever try. Full safe & secure always, 24/7 open, incall-outcall no problem. Payment on delivery.',
+    slaAndCompliance: 'Payment on delivery, 100% verified & safe.',
+    hiringAndSupportPolicy: 'Call or WhatsApp directly for immediate booking.'
+  },
+  {
+    id: 'surbhi-celebrity-escort',
+    name: 'Surbhi Celebrity Escort',
+    tagline: '23 Years • Model • Jaipur',
+    category: 'in-person-meetup',
+    categoryLabel: 'Celebrity & Model Escort',
+    locationZone: 'JLN Marg & Malviya Nagar',
+    address: 'JLN Marg & World Trade Park, Jaipur',
+    distanceAirportKm: 5.0,
+    responseRateMinutes: 2,
+    availableToday: true,
+    supportedShifts: ['Model Outcall 24/7', 'Incall Available'],
+    rating: 4.9,
+    reviewCount: 385,
+    featured: true,
+    image: CLIENT_HOST_IMAGES.image14 || 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80',
+    gallery: [
+      CLIENT_HOST_IMAGES.image14 || 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80'
+    ],
+    priceTier: 'Verified Model',
+    whatsappNumber: '+919315751207',
+    phoneNumber: '+919315751207',
+    languages: ['Hindi (Native)', 'English (Fluent)'],
+    verifiedBadge: true,
+    highlights: [
+      'Hi, I\'m Surbhi Sinha, Celebrity girl turning Jaipur nights into something hot.',
+      'Full safe & secure always, 24/7 open, incall-outcall no issue, payment on delivery.'
+    ],
+    features: ['Model & Celebrity Escort', 'Payment on Delivery'],
+    floors: [{ name: 'Celebrity Meetup', type: 'In-Person Meetup', duration: 'Flexible', description: 'Top model experience in Jaipur.' }],
+    description: 'Hi, I\'m Surbhi Sinha, Celebrity girl turning Jaipur nights into something hot. For real intimate sensual escape discreet passion or naughty playful stuff I team up with beautiful real model girl types who are independent like me. All at cheap rate prices! Full safe & secure always, 24/7 open, incall-outcall no issue, payment on delivery.',
+    slaAndCompliance: 'Verified real model companion.',
+    hiringAndSupportPolicy: 'Direct call or WhatsApp ping.'
+  },
+  {
+    id: 'zara-kapoor-host',
+    name: 'Zara Kapoor VIP Escort',
+    tagline: '22 Years • College Girl • Jaipur',
+    category: 'conversation-companion',
+    categoryLabel: 'VIP College Escort',
+    locationZone: 'Vaishali Nagar',
+    address: 'Vaishali Nagar & Ajmer Road, Jaipur',
+    distanceAirportKm: 12.0,
+    responseRateMinutes: 2,
+    availableToday: true,
+    supportedShifts: ['Incall / Outcall', 'Direct Chat'],
+    rating: 4.9,
+    reviewCount: 310,
+    featured: true,
+    image: CLIENT_HOST_IMAGES.image15 || 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80',
+    gallery: [
+      CLIENT_HOST_IMAGES.image15 || 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80'
+    ],
+    priceTier: 'VIP Young Escort',
+    whatsappNumber: '+919315751207',
+    phoneNumber: '+919315751207',
+    languages: ['English', 'Hindi'],
+    verifiedBadge: true,
+    highlights: [
+      'Fresh, energetic & sophisticated young companion.',
+      'Instant direct booking with payment on delivery.'
+    ],
+    features: ['Fresh College Model', 'VIP Companion'],
+    floors: [{ name: 'VIP Meetup', type: 'In-Person Meetup', duration: 'Flexible', description: 'Fresh & energetic companion in Jaipur.' }],
+    description: 'Zara is a young and cheerful college model available for genuine, high-class companionships and outings in Jaipur with full privacy.',
+    slaAndCompliance: 'Safety & Privacy Guaranteed.',
+    hiringAndSupportPolicy: 'Contact via Phone or WhatsApp.'
+  }
+];
+
+
