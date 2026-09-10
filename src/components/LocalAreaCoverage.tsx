@@ -23,8 +23,11 @@ const JAIPUR_AREAS = [
 
 export const LocalAreaCoverage: React.FC = () => {
   return (
-    <section id="area-coverage" className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-950/80 text-slate-100 border-b border-pink-500/20">
-      <div className="max-w-7xl mx-auto">
+    <section
+      id="area-coverage"
+      className="w-full min-h-0 overflow-visible py-16 pb-24 px-4 sm:px-6 lg:px-8 bg-slate-950/80 text-slate-100 border-b border-pink-500/20"
+    >
+      <div className="w-full max-w-7xl mx-auto min-h-0">
         <div className="text-center mb-10">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-pink-500/40 bg-pink-500/10 text-pink-300 text-sm font-bold tracking-wide">
             <span>⌖</span> LOCATIONS &amp; AREA COVERAGE
@@ -37,14 +40,15 @@ export const LocalAreaCoverage: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
+        {/* All area cards remain in normal document flow on every screen size. */}
+        <div className="grid w-full min-h-0 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 auto-rows-auto">
           {JAIPUR_AREAS.map((area, index) => (
             <article
               key={area.name}
-              className={`group rounded-2xl border border-slate-700/70 bg-slate-950/90 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-pink-500/70 hover:shadow-[0_12px_35px_rgba(236,72,153,0.14)] ${index === 0 ? 'border-pink-500/80' : ''}`}
+              className={`group min-w-0 w-full rounded-2xl border border-slate-700/70 bg-slate-950/90 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-pink-500/70 hover:shadow-[0_12px_35px_rgba(236,72,153,0.14)] ${index === 0 ? 'border-pink-500/80' : ''}`}
             >
               <div className="flex items-start justify-between gap-3">
-                <h3 className="text-xl font-serif font-bold text-white group-hover:text-pink-200 transition-colors">
+                <h3 className="min-w-0 break-words text-xl font-serif font-bold text-white group-hover:text-pink-200 transition-colors">
                   {area.name}
                 </h3>
                 <span className="shrink-0 rounded-full border border-pink-500/40 bg-pink-500/10 px-3 py-1 text-xs font-bold text-pink-300">
@@ -52,22 +56,23 @@ export const LocalAreaCoverage: React.FC = () => {
                 </span>
               </div>
 
-              <div className="mt-3 flex items-center gap-2 text-sm font-medium text-pink-400">
-                <span>▥</span>
-                <span>{area.name}, Jaipur</span>
+              <div className="mt-3 flex items-start gap-2 text-sm font-medium text-pink-400">
+                <span className="shrink-0">▥</span>
+                <span className="min-w-0 break-words">{area.name}, Jaipur</span>
               </div>
 
-              <p className="mt-3 min-h-[58px] text-sm leading-6 text-slate-300">
+              <p className="mt-3 text-sm leading-6 text-slate-300">
                 {area.description}
               </p>
 
               <div className="mt-4 border-t border-slate-800 pt-4">
                 <button
                   type="button"
-                  className="inline-flex items-center gap-2 text-sm font-bold text-pink-300 transition-colors hover:text-pink-200"
+                  className="inline-flex max-w-full items-center gap-2 break-words text-left text-sm font-bold text-pink-300 transition-colors hover:text-pink-200"
                   onClick={() => document.getElementById('agent-explorer')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  <span>➤</span> Explore {area.name}
+                  <span className="shrink-0">➤</span>
+                  <span>Explore {area.name}</span>
                 </button>
               </div>
             </article>
