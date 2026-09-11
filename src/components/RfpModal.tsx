@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { X, Calendar, Send, PhoneCall, MessageCircle } from 'lucide-react';
-import { CallCenterFacility, BpoRfpFormData } from '../types';
-import { JAIPUR_MEETUP_ZONES } from '../data/callCenters';
-import { SITE_PHONE_RAW, SITE_WHATSAPP_RAW } from '../config/siteConfig';
+import React, { useState, useEffect } from "react";
+import { X, Calendar, Send, PhoneCall, MessageCircle } from "lucide-react";
+import { CallCenterFacility, BpoRfpFormData } from "../types";
+import { JAIPUR_MEETUP_ZONES } from "../data/callCenters";
+import { SITE_PHONE_RAW, SITE_WHATSAPP_RAW } from "../config/siteConfig";
 
 interface RfpModalProps {
   isOpen: boolean;
@@ -21,19 +21,25 @@ export const RfpModal: React.FC<RfpModalProps> = ({
   if (!isOpen) return null;
 
   const [formData, setFormData] = useState<BpoRfpFormData>({
-    serviceName: selectedFacility ? selectedFacility.name : 'Jaipur Host Booking',
-    serviceType: selectedFacility ? selectedFacility.categoryLabel : 'Host Connect',
-    clientName: '',
-    email: '',
-    phone: '',
-    companyName: '',
-    targetMarket: 'Online Voice Call',
+    serviceName: selectedFacility
+      ? selectedFacility.name
+      : "Jaipur Host Booking",
+    serviceType: selectedFacility
+      ? selectedFacility.categoryLabel
+      : "Host Connect",
+    clientName: "",
+    email: "",
+    phone: "",
+    companyName: "",
+    targetMarket: "Online Voice Call",
     seatsRequired: 1,
-    shiftPreference: 'Evening Meetup',
-    preferredZone: selectedFacility ? selectedFacility.locationZone : 'C-Scheme Heritage Cafes',
+    shiftPreference: "Evening Meetup",
+    preferredZone: selectedFacility
+      ? selectedFacility.locationZone
+      : "C-Scheme Heritage Cafes",
     includeAgentRecruitment: true,
-    culturalLanguageNeeds: ['English', 'Hindi'],
-    specialRequirements: '',
+    culturalLanguageNeeds: ["English", "Hindi"],
+    specialRequirements: "",
     facilityId: selectedFacility?.id,
   });
 
@@ -56,14 +62,21 @@ export const RfpModal: React.FC<RfpModalProps> = ({
     setIsSubmitting(true);
 
     try {
-      const refNum = 'CONNECT-JPR-' + Math.floor(100000 + Math.random() * 900000);
+      const refNum =
+        "CONNECT-JPR-" + Math.floor(100000 + Math.random() * 900000);
 
       const rawTargetNum = selectedFacility?.whatsappNumber
-        ? selectedFacility.whatsappNumber.replace(/[^0-9]/g, '')
-        : (selectedFacility?.phoneNumber ? selectedFacility.phoneNumber.replace(/[^0-9]/g, '') : SITE_WHATSAPP_RAW);
+        ? selectedFacility.whatsappNumber.replace(/[^0-9]/g, "")
+        : selectedFacility?.phoneNumber
+          ? selectedFacility.phoneNumber.replace(/[^0-9]/g, "")
+          : SITE_WHATSAPP_RAW;
 
-      const hostName = selectedFacility ? selectedFacility.name : (formData.serviceName || 'Meet In Jaipur Host Desk');
-      const hostCategory = selectedFacility ? selectedFacility.categoryLabel : (formData.serviceType || 'Host Connect');
+      const hostName = selectedFacility
+        ? selectedFacility.name
+        : formData.serviceName || "Meet In Jaipur Host Desk";
+      const hostCategory = selectedFacility
+        ? selectedFacility.categoryLabel
+        : formData.serviceType || "Host Connect";
 
       const whatsappLines = [
         `👋 *Hello Meet In Jaipur!*`,
@@ -73,7 +86,9 @@ export const RfpModal: React.FC<RfpModalProps> = ({
         `• *Ref ID:* ${refNum}`,
         `• *Selected Host:* ${hostName}`,
         `• *Host Category:* ${hostCategory}`,
-        selectedFacility?.hourlyRate ? `• *Host Rate:* ${selectedFacility.hourlyRate}` : '',
+        selectedFacility?.hourlyRate
+          ? `• *Host Rate:* ${selectedFacility.hourlyRate}`
+          : "",
         ``,
         `👤 *MY CONTACT DETAILS*`,
         `• *Full Name:* ${formData.clientName}`,
@@ -82,22 +97,23 @@ export const RfpModal: React.FC<RfpModalProps> = ({
         `📍 *CONNECTION PREFERENCES*`,
         `• *Connection Mode:* ${formData.targetMarket}`,
         `• *Preferred Meetup Zone:* ${formData.preferredZone}`,
-        `• *Notes / Preferred Time / Topics:* ${formData.specialRequirements ? formData.specialRequirements : 'None provided'}`,
+        `• *Notes / Preferred Time / Topics:* ${formData.specialRequirements ? formData.specialRequirements : "None provided"}`,
         ``,
-        `Please confirm host availability and connect us. Thank you!`
+        `Please confirm host availability and connect us. Thank you!`,
       ].filter(Boolean);
 
-      const messageText = whatsappLines.join('\n');
+      const messageText = whatsappLines.join("\n");
       const whatsappUrl = `https://wa.me/${rawTargetNum}?text=${encodeURIComponent(messageText)}`;
 
       // Open WhatsApp chat directly with all details pre-filled
-      window.open(whatsappUrl, '_blank');
+      window.open(whatsappUrl, "_blank");
 
       onSubmitSuccess(refNum);
       onClose();
     } catch (err) {
-      console.error('Booking Request Error:', err);
-      const refNum = 'CONNECT-JPR-' + Math.floor(100000 + Math.random() * 900000);
+      console.error("Booking Request Error:", err);
+      const refNum =
+        "CONNECT-JPR-" + Math.floor(100000 + Math.random() * 900000);
       onSubmitSuccess(refNum);
       onClose();
     } finally {
@@ -105,8 +121,12 @@ export const RfpModal: React.FC<RfpModalProps> = ({
     }
   };
 
-  const rawPhone = selectedFacility?.phoneNumber ? selectedFacility.phoneNumber.replace(/[^0-9]/g, '') : SITE_PHONE_RAW;
-  const rawWhatsapp = selectedFacility?.whatsappNumber ? selectedFacility.whatsappNumber.replace(/[^0-9]/g, '') : SITE_WHATSAPP_RAW;
+  const rawPhone = selectedFacility?.phoneNumber
+    ? selectedFacility.phoneNumber.replace(/[^0-9]/g, "")
+    : SITE_PHONE_RAW;
+  const rawWhatsapp = selectedFacility?.whatsappNumber
+    ? selectedFacility.whatsappNumber.replace(/[^0-9]/g, "")
+    : SITE_WHATSAPP_RAW;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-950/80 backdrop-blur-md overflow-y-auto">
@@ -122,7 +142,9 @@ export const RfpModal: React.FC<RfpModalProps> = ({
                 Host Connection Request
               </h2>
               <p className="text-xs text-slate-400">
-                {selectedFacility ? `Target Host: ${selectedFacility.name}` : 'Meet In Jaipur Host Desk'}
+                {selectedFacility
+                  ? `Target Host: ${selectedFacility.name}`
+                  : "Meet In Jaipur Host Desk"}
               </p>
             </div>
           </div>
@@ -171,7 +193,9 @@ export const RfpModal: React.FC<RfpModalProps> = ({
                 required
                 placeholder="e.g. Rahul Sharma"
                 value={formData.clientName}
-                onChange={(e) => setFormData({ ...formData, clientName: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, clientName: e.target.value })
+                }
                 className="w-full bg-slate-950 border border-slate-800 focus:border-pink-500 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none"
               />
             </div>
@@ -184,9 +208,11 @@ export const RfpModal: React.FC<RfpModalProps> = ({
               <input
                 type="tel"
                 required
-                placeholder="+91 93157 51207"
+                placeholder=""
                 value={formData.phone}
-                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, phone: e.target.value })
+                }
                 className="w-full bg-slate-950 border border-slate-800 focus:border-pink-500 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none"
               />
             </div>
@@ -198,13 +224,26 @@ export const RfpModal: React.FC<RfpModalProps> = ({
               </label>
               <select
                 value={formData.targetMarket}
-                onChange={(e) => setFormData({ ...formData, targetMarket: e.target.value as any })}
+                onChange={(e) =>
+                  setFormData({
+                    ...formData,
+                    targetMarket: e.target.value as any,
+                  })
+                }
                 className="w-full bg-slate-950 border border-slate-800 focus:border-pink-500 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none"
               >
-                <option value="Online Voice Call">📞 Online Audio / Voice Call</option>
-                <option value="In-Person Meetup">☕ Cafe & Dining Meetup</option>
-                <option value="Heritage Tour">🏛️ Jaipur City Heritage Tour</option>
-                <option value="WhatsApp Direct">💬 WhatsApp Direct Connect</option>
+                <option value="Online Voice Call">
+                  📞 Online Audio / Voice Call
+                </option>
+                <option value="In-Person Meetup">
+                  ☕ Cafe & Dining Meetup
+                </option>
+                <option value="Heritage Tour">
+                  🏛️ Jaipur City Heritage Tour
+                </option>
+                <option value="WhatsApp Direct">
+                  💬 WhatsApp Direct Connect
+                </option>
               </select>
             </div>
 
@@ -215,10 +254,12 @@ export const RfpModal: React.FC<RfpModalProps> = ({
               </label>
               <select
                 value={formData.preferredZone}
-                onChange={(e) => setFormData({ ...formData, preferredZone: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, preferredZone: e.target.value })
+                }
                 className="w-full bg-slate-950 border border-slate-800 focus:border-pink-500 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none"
               >
-                {JAIPUR_MEETUP_ZONES.filter((z) => z.id !== 'all').map((z) => (
+                {JAIPUR_MEETUP_ZONES.filter((z) => z.id !== "all").map((z) => (
                   <option key={z.id} value={z.name}>
                     {z.name}
                   </option>
@@ -236,7 +277,12 @@ export const RfpModal: React.FC<RfpModalProps> = ({
               rows={3}
               placeholder="e.g. Would like a coffee session at Tapri Central in C-Scheme around 4 PM..."
               value={formData.specialRequirements}
-              onChange={(e) => setFormData({ ...formData, specialRequirements: e.target.value })}
+              onChange={(e) =>
+                setFormData({
+                  ...formData,
+                  specialRequirements: e.target.value,
+                })
+              }
               className="w-full bg-slate-950 border border-slate-800 focus:border-pink-500 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none"
             />
           </div>
@@ -245,7 +291,10 @@ export const RfpModal: React.FC<RfpModalProps> = ({
           <div className="pt-2 space-y-2">
             <p className="text-[11px] text-emerald-400 font-medium text-center flex items-center justify-center space-x-1">
               <MessageCircle className="w-3.5 h-3.5" />
-              <span>Submitting opens WhatsApp directly with all your details prefilled</span>
+              <span>
+                Submitting opens WhatsApp directly with all your details
+                prefilled
+              </span>
             </p>
             <button
               type="submit"
@@ -253,7 +302,11 @@ export const RfpModal: React.FC<RfpModalProps> = ({
               className="w-full py-3.5 bg-gradient-to-r from-rose-500 via-pink-500 to-fuchsia-600 hover:from-rose-400 hover:to-pink-500 text-white font-bold rounded-2xl text-xs sm:text-sm shadow-xl shadow-pink-500/25 disabled:opacity-50 transition-all flex items-center justify-center space-x-2"
             >
               <Send className="w-4 h-4" />
-              <span>{isSubmitting ? 'Sending Request...' : 'Confirm Host Request & Open WhatsApp'}</span>
+              <span>
+                {isSubmitting
+                  ? "Sending Request..."
+                  : "Confirm Host Request & Open WhatsApp"}
+              </span>
             </button>
           </div>
         </form>

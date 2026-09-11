@@ -1,12 +1,12 @@
 /**
  * =========================================================================
- * SAKSHI BANSAL JAIPUR - SITE & BRAND CONFIGURATION
+ * Jaipur sakshi escort - SITE & BRAND CONFIGURATION
  * =========================================================================
  * Client can easily update brand details, images, logo, and video below.
  */
 
 // 1. BRAND NAME
-export const BRAND_NAME = "Sakshi Bansal Jaipur";
+export const BRAND_NAME = "Jaipur sakshi escort";
 
 // 2. BRAND LOGO
 // Place logo.svg inside the 'public' folder (e.g., public/logo.svg)

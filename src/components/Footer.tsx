@@ -1,6 +1,14 @@
-import React, { useState } from 'react';
-import { Users, PhoneCall, MapPin, Heart, MessageCircle } from 'lucide-react';
-import { BRAND_NAME, BRAND_LOGO_PATH, SITE_PHONE_RAW, SITE_PHONE_DISPLAY, SITE_WHATSAPP_RAW, SITE_WHATSAPP_SECONDARY_RAW, SITE_WHATSAPP_SECONDARY_DISPLAY } from '../config/siteConfig';
+import React, { useState } from "react";
+import { Users, PhoneCall, MapPin, Heart, MessageCircle } from "lucide-react";
+import {
+  BRAND_NAME,
+  BRAND_LOGO_PATH,
+  SITE_PHONE_RAW,
+  SITE_PHONE_DISPLAY,
+  SITE_WHATSAPP_RAW,
+  SITE_WHATSAPP_SECONDARY_RAW,
+  SITE_WHATSAPP_SECONDARY_DISPLAY,
+} from "../config/siteConfig";
 
 interface FooterProps {
   onNavigateSection: (sectionId: string) => void;
@@ -17,7 +25,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateSection }) => {
         <div className="lg:col-span-2 space-y-4">
           <button
             type="button"
-            onClick={() => onNavigateSection('hero')}
+            onClick={() => onNavigateSection("hero")}
             className="flex items-center space-x-3 text-left focus:outline-none group cursor-pointer"
           >
             <div className="relative w-10 h-10 rounded-2xl bg-gradient-to-tr from-rose-500 via-pink-500 to-fuchsia-600 p-0.5 shadow-lg shadow-pink-500/20 overflow-hidden group-hover:scale-105 transition-transform">
@@ -38,7 +46,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateSection }) => {
           </button>
 
           <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
-            Jaipur’s premier firm connecting people to people. Talk online, chat on WhatsApp, or meet in person with verified local hosts, companions, and cultural guides across the Pink City.
+            Jaipur’s premier firm connecting people to people. Talk online, chat
+            on WhatsApp, or meet in person with verified local hosts,
+            companions, and cultural guides across the Pink City.
           </p>
 
           <div className="pt-2 flex flex-wrap items-center gap-2">
@@ -79,10 +89,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateSection }) => {
           </h4>
           <ul className="space-y-2.5 text-xs text-slate-400">
             {[
-              { id: 'centers', label: 'Host Directory' },
-              { id: 'map', label: 'Jaipur Locations' },
-              { id: 'concierge', label: 'Find!' },
-              { id: 'capabilities', label: 'Connection Modes' },
+              { id: "centers", label: "Host Directory" },
+              { id: "map", label: "Jaipur Locations" },
+              { id: "concierge", label: "Find!" },
+              { id: "capabilities", label: "Connection Modes" },
             ].map((link) => (
               <li key={link.id}>
                 <button
@@ -117,12 +127,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateSection }) => {
           </h4>
           <div className="flex items-center space-x-2 text-xs text-slate-300">
             <MapPin className="w-4 h-4 text-pink-400 flex-shrink-0" />
-            <span>C-Scheme & JLN Marg, Jaipur, Rajasthan 302001</span>
+            <span>C-Scheme & JLN Marg, Jaipur, Rajasthan 302021</span>
           </div>
 
           <div className="flex items-center space-x-2 text-xs text-slate-300">
             <PhoneCall className="w-4 h-4 text-pink-400 flex-shrink-0" />
-            <span>{SITE_PHONE_DISPLAY}</span>
+            <span>{7240493868}</span>
           </div>
         </div>
       </div>

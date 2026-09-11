@@ -1,6 +1,18 @@
-import React, { useState } from 'react';
-import { MapPin, PhoneCall, MessageCircle, Building2, CheckCircle2, ShieldCheck, ChevronDown } from 'lucide-react';
-import { SITE_PHONE_RAW, SITE_PHONE_DISPLAY, SITE_WHATSAPP_RAW } from '../config/siteConfig';
+import React, { useState } from "react";
+import {
+  MapPin,
+  PhoneCall,
+  MessageCircle,
+  Building2,
+  CheckCircle2,
+  ShieldCheck,
+  ChevronDown,
+} from "lucide-react";
+import {
+  SITE_PHONE_RAW,
+  SITE_PHONE_DISPLAY,
+  SITE_WHATSAPP_RAW,
+} from "../config/siteConfig";
 
 interface CityData {
   id: string;
@@ -14,140 +26,340 @@ interface CityData {
 
 export const RAJASTHAN_CITIES: CityData[] = [
   {
-    id: 'jaipur',
-    name: 'Jaipur (Pink City)',
-    tagline: 'Capital Hub • 100+ Verified Hosts 24/7',
+    id: "jaipur",
+    name: "Jaipur (Pink City)",
+    tagline: "Capital Hub • 100+ Verified Hosts 24/7",
     hostsCount: 120,
-    popularZones: ['C-Scheme', 'Malviya Nagar', 'Vaishali Nagar', 'Mansarovar', 'Tonk Road', 'JLN Marg'],
-    description: 'Premier companion and escort service across all 5-star hotels, luxury resorts, private villas, and home deliveries in Jaipur.',
-    status: 'High Demand • Instant 15 Min Delivery',
+    popularZones: [
+      "C-Scheme",
+      "Malviya Nagar",
+      "Vaishali Nagar",
+      "Mansarovar",
+      "Tonk Road",
+      "JLN Marg",
+    ],
+    description:
+      "Premier companion and escort service across all 5-star hotels, luxury resorts, private villas, and home deliveries in Jaipur.",
+    status: "High Demand • Instant 15 Min Delivery",
   },
   {
-    id: 'udaipur',
-    name: 'Udaipur (City of Lakes)',
-    tagline: 'Lake View Resorts • Luxury Companions',
+    id: "udaipur",
+    name: "Udaipur (City of Lakes)",
+    tagline: "Lake View Resorts • Luxury Companions",
     hostsCount: 45,
-    popularZones: ['Lake Pichola', 'Fateh Sagar', 'Sukhadia Circle', 'Hiran Magri', 'Goverdhan Vilas'],
-    description: 'Top-class high profile companions for luxury lake resorts, royal heritage hotels, and romantic dinner dates in Udaipur.',
-    status: 'Active 24/7 • Cash on Delivery',
+    popularZones: [
+      "Lake Pichola",
+      "Fateh Sagar",
+      "Sukhadia Circle",
+      "Hiran Magri",
+      "Goverdhan Vilas",
+    ],
+    description:
+      "Top-class high profile companions for luxury lake resorts, royal heritage hotels, and romantic dinner dates in Udaipur.",
+    status: "Active 24/7 • Cash on Delivery",
   },
   {
-    id: 'jodhpur',
-    name: 'Jodhpur (Sun City)',
-    tagline: 'Heritage Escorts • Royal Service',
+    id: "jodhpur",
+    name: "Jodhpur (Sun City)",
+    tagline: "Heritage Escorts • Royal Service",
     hostsCount: 38,
-    popularZones: ['Ratanada', 'Shastri Nagar', 'Paota', 'Circuit House Road', 'Pal Road'],
-    description: 'Discreet and elegant companions for hotel stays, desert resorts, and executive visits in Jodhpur.',
-    status: 'Active 24/7 • Cash on Delivery',
+    popularZones: [
+      "Ratanada",
+      "Shastri Nagar",
+      "Paota",
+      "Circuit House Road",
+      "Pal Road",
+    ],
+    description:
+      "Discreet and elegant companions for hotel stays, desert resorts, and executive visits in Jodhpur.",
+    status: "Active 24/7 • Cash on Delivery",
   },
   {
-    id: 'kota',
-    name: 'Kota (Educational Hub)',
-    tagline: 'Young & College Models Available',
+    id: "kota",
+    name: "Kota (Educational Hub)",
+    tagline: "Young & College Models Available",
     hostsCount: 30,
-    popularZones: ['Talwandi', 'Vigyan Nagar', 'Chawani', 'Rajeev Gandhi Nagar', 'Dadabari'],
-    description: 'Fresh, energetic college girls and young independent hosts available for private incall and outcall in Kota.',
-    status: 'Active 24/7 • Cash on Delivery',
+    popularZones: [
+      "Talwandi",
+      "Vigyan Nagar",
+      "Chawani",
+      "Rajeev Gandhi Nagar",
+      "Dadabari",
+    ],
+    description:
+      "Fresh, energetic college girls and young independent hosts available for private incall and outcall in Kota.",
+    status: "Active 24/7 • Cash on Delivery",
   },
   {
-    id: 'ajmer',
-    name: 'Ajmer & Pushkar',
-    tagline: 'Resort Companions • Heritage Escorts',
+    id: "ajmer",
+    name: "Ajmer & Pushkar",
+    tagline: "Resort Companions • Heritage Escorts",
     hostsCount: 28,
-    popularZones: ['Pushkar Road', 'Ana Sagar', 'Vaishali Nagar', 'Civil Lines', 'Makhupura'],
-    description: 'Verified female companions available for resort stays, sightseeing tours, and luxury hotel dates in Ajmer & Pushkar.',
-    status: 'Active 24/7 • Cash on Delivery',
+    popularZones: [
+      "Pushkar Road",
+      "Ana Sagar",
+      "Vaishali Nagar",
+      "Civil Lines",
+      "Makhupura",
+    ],
+    description:
+      "Verified female companions available for resort stays, sightseeing tours, and luxury hotel dates in Ajmer & Pushkar.",
+    status: "Active 24/7 • Cash on Delivery",
   },
   {
-    id: 'bikaner',
-    name: 'Bikaner',
-    tagline: 'Desert City VIP Companion Service',
+    id: "bikaner",
+    name: "Bikaner",
+    tagline: "Desert City VIP Companion Service",
     hostsCount: 22,
-    popularZones: ['Jayanagar', 'Rani Bazar', 'Karni Nagar', 'Pawan Puri'],
-    description: 'Premium outcall service available across top hotels and private accommodations in Bikaner.',
-    status: 'Active 24/7 • Cash on Delivery',
+    popularZones: ["Jayanagar", "Rani Bazar", "Karni Nagar", "Pawan Puri"],
+    description:
+      "Premium outcall service available across top hotels and private accommodations in Bikaner.",
+    status: "Active 24/7 • Cash on Delivery",
   },
   {
-    id: 'bhilwara',
-    name: 'Bhilwara',
-    tagline: 'Textile City Independent Hosts',
+    id: "bhilwara",
+    name: "Bhilwara",
+    tagline: "Textile City Independent Hosts",
     hostsCount: 18,
-    popularZones: ['Subhash Nagar', 'RCS Colony', 'Pur Road', 'Azad Nagar'],
-    description: 'Independent, well-behaved local companions for business travelers and private staymates in Bhilwara.',
-    status: 'Active 24/7 • Cash on Delivery',
+    popularZones: ["Subhash Nagar", "RCS Colony", "Pur Road", "Azad Nagar"],
+    description:
+      "Independent, well-behaved local companions for business travelers and private staymates in Bhilwara.",
+    status: "Active 24/7 • Cash on Delivery",
   },
   {
-    id: 'alwar',
-    name: 'Alwar & Bhiwadi',
-    tagline: 'Industrial & Hotel Corridor Service',
+    id: "alwar",
+    name: "Alwar & Bhiwadi",
+    tagline: "Industrial & Hotel Corridor Service",
     hostsCount: 25,
-    popularZones: ['Bhiwadi Hub', 'NEB Housing Board', 'Matsya Industrial Zone', 'Vijay Nagar'],
-    description: 'Immediate 24/7 escort service available for corporate executives and visitors in Alwar & Bhiwadi.',
-    status: 'Active 24/7 • Cash on Delivery',
+    popularZones: [
+      "Bhiwadi Hub",
+      "NEB Housing Board",
+      "Matsya Industrial Zone",
+      "Vijay Nagar",
+    ],
+    description:
+      "Immediate 24/7 escort service available for corporate executives and visitors in Alwar & Bhiwadi.",
+    status: "Active 24/7 • Cash on Delivery",
   },
   {
-    id: 'sikar',
-    name: 'Sikar & Khatu Shyamji',
-    tagline: 'Local Independent Hosts',
+    id: "sikar",
+    name: "Sikar & Khatu Shyamji",
+    tagline: "Local Independent Hosts",
     hostsCount: 16,
-    popularZones: ['Piprali Road', 'Bajaj Gram', 'Silver Jubliee Road'],
-    description: 'Discreet companion service with 100% cash on delivery and full privacy guaranteed.',
-    status: 'Active 24/7 • Cash on Delivery',
+    popularZones: ["Piprali Road", "Bajaj Gram", "Silver Jubliee Road"],
+    description:
+      "Discreet companion service with 100% cash on delivery and full privacy guaranteed.",
+    status: "Active 24/7 • Cash on Delivery",
   },
   {
-    id: 'jaisalmer',
-    name: 'Jaisalmer (Golden City)',
-    tagline: 'Desert Safari & Luxury Camp Companions',
+    id: "jaisalmer",
+    name: "Jaisalmer (Golden City)",
+    tagline: "Desert Safari & Luxury Camp Companions",
     hostsCount: 20,
-    popularZones: ['Sam Sand Dunes', 'Fort Area', 'Hanuman Circle', 'Gadisar Road'],
-    description: 'VIP models and resort companions for desert safari camps and luxury hotel staycations in Jaisalmer.',
-    status: 'Active 24/7 • Cash on Delivery',
+    popularZones: [
+      "Sam Sand Dunes",
+      "Fort Area",
+      "Hanuman Circle",
+      "Gadisar Road",
+    ],
+    description:
+      "VIP models and resort companions for desert safari camps and luxury hotel staycations in Jaisalmer.",
+    status: "Active 24/7 • Cash on Delivery",
   },
   {
-    id: 'mount-abu',
-    name: 'Mount Abu (Hill Station)',
-    tagline: 'Hill Resort VIP Escort Service',
+    id: "mount-abu",
+    name: "Mount Abu (Hill Station)",
+    tagline: "Hill Resort VIP Escort Service",
     hostsCount: 15,
-    popularZones: ['Nakki Lake', 'Sunset Point Road', 'Delwara', 'Oriya'],
-    description: 'Charming outstation companions for hill resort stays and weekend getaways in Mount Abu.',
-    status: 'Active 24/7 • Cash on Delivery',
+    popularZones: ["Nakki Lake", "Sunset Point Road", "Delwara", "Oriya"],
+    description:
+      "Charming outstation companions for hill resort stays and weekend getaways in Mount Abu.",
+    status: "Active 24/7 • Cash on Delivery",
   },
   {
-    id: 'chittorgarh',
-    name: 'Chittorgarh',
-    tagline: 'Heritage Companion Desk',
+    id: "chittorgarh",
+    name: "Chittorgarh",
+    tagline: "Heritage Companion Desk",
     hostsCount: 14,
-    popularZones: ['Fort Road', 'Senthi', 'Collectorate Circle'],
-    description: 'Genuine female companions available for hotel meets with zero advance booking required.',
-    status: 'Active 24/7 • Cash on Delivery',
+    popularZones: ["Fort Road", "Senthi", "Collectorate Circle"],
+    description:
+      "Genuine female companions available for hotel meets with zero advance booking required.",
+    status: "Active 24/7 • Cash on Delivery",
   },
   {
-    id: 'bharatpur',
-    name: 'Bharatpur',
-    tagline: 'Bird Sanctuary & Highway Hotels',
+    id: "bharatpur",
+    name: "Bharatpur",
+    tagline: "Bird Sanctuary & Highway Hotels",
     hostsCount: 12,
-    popularZones: ['NH-21 Highway', 'Circular Road', 'Surajpole'],
-    description: 'Safe and punctual local hosts available for private hotel bookings in Bharatpur.',
-    status: 'Active 24/7 • Cash on Delivery',
+    popularZones: ["NH-21 Highway", "Circular Road", "Surajpole"],
+    description:
+      "Safe and punctual local hosts available for private hotel bookings in Bharatpur.",
+    status: "Active 24/7 • Cash on Delivery",
   },
   {
-    id: 'sri-ganganagar',
-    name: 'Sri Ganganagar',
-    tagline: 'North Rajasthan Companion Service',
+    id: "sri-ganganagar",
+    name: "Sri Ganganagar",
+    tagline: "North Rajasthan Companion Service",
     hostsCount: 16,
-    popularZones: ['Jawahar Nagar', 'Model Town', 'Ridhi Sidhi'],
-    description: 'Verified independent hosts offering friendly phone calls and in-person meetups.',
-    status: 'Active 24/7 • Cash on Delivery',
+    popularZones: ["Jawahar Nagar", "Model Town", "Ridhi Sidhi"],
+    description:
+      "Verified independent hosts offering friendly phone calls and in-person meetups.",
+    status: "Active 24/7 • Cash on Delivery",
+  },
+  {
+    id: "delhi",
+    name: "Delhi",
+    tagline: "National Capital",
+    hostsCount: 34,
+    popularZones: ["Central Delhi", "South Delhi", "Dwarka", "Rohini"],
+    description: "Explore available services and locations across Delhi.",
+    status: "Available",
+  },
+  {
+    id: "goa",
+    name: "Goa",
+    tagline: "Coastal Destination",
+    hostsCount: 23,
+    popularZones: ["Panaji", "Calangute", "Candolim", "Margao"],
+    description: "Explore available services and locations across Goa.",
+    status: "Available",
+  },
+  {
+    id: "mumbai",
+    name: "Mumbai",
+    tagline: "City of Dreams",
+    hostsCount: 12,
+    popularZones: ["Andheri", "Bandra", "Powai", "South Mumbai"],
+    description: "Explore available services and locations across Mumbai.",
+    status: "Available",
+  },
+  {
+    id: "bangalore",
+    name: "Bangalore",
+    tagline: "Silicon Valley of India",
+    hostsCount: 15,
+    popularZones: ["Indiranagar", "Koramangala", "Whitefield", "HSR Layout"],
+    description: "Explore available services and locations across Bangalore.",
+    status: "Available",
+  },
+  {
+    id: "gurgaon",
+    name: "Gurgaon",
+    tagline: "Corporate & Business Hub",
+    hostsCount: 17,
+    popularZones: ["Golf Course Road", "Cyber City", "Sohna Road", "Sector 29"],
+    description: "Explore available services and locations across Gurgaon.",
+    status: "Available",
+  },
+  {
+    id: "hyderabad",
+    name: "Hyderabad",
+    tagline: "City of Pearls",
+    hostsCount: 12,
+    popularZones: [
+      "Banjara Hills",
+      "Jubilee Hills",
+      "Hitech City",
+      "Gachibowli",
+    ],
+    description: "Explore available services and locations across Hyderabad.",
+    status: "Available",
+  },
+  {
+    id: "chandigarh",
+    name: "Chandigarh",
+    tagline: "The City Beautiful",
+    hostsCount: 8,
+    popularZones: ["Sector 17", "Sector 22", "Zirakpur", "Mohali"],
+    description: "Explore available services and locations across Chandigarh.",
+    status: "Available",
+  },
+  {
+    id: "noida",
+    name: "Noida",
+    tagline: "Modern NCR Business Hub",
+    hostsCount: 4,
+    popularZones: ["Sector 18", "Sector 62", "Sector 137", "Greater Noida"],
+    description: "Explore available services and locations across Noida.",
+    status: "Available",
+  },
+  {
+    id: "nainital",
+    name: "Nainital",
+    tagline: "Lake City",
+    hostsCount: 15,
+    popularZones: ["Mall Road", "Bhowali", "Tallital", "Bhimtal"],
+    description: "Explore available services and locations across Nainital.",
+    status: "Available",
+  },
+  {
+    id: "haridwar",
+    name: "Haridwar",
+    tagline: "Gateway to the Himalayas",
+    hostsCount: 6,
+    popularZones: ["Har Ki Pauri", "Ranipur", "Jwalapur", "Kankhal"],
+    description: "Explore available services and locations across Haridwar.",
+    status: "Available",
+  },
+  {
+    id: "pune",
+    name: "Pune",
+    tagline: "Cultural & IT Hub",
+    hostsCount: 17,
+    popularZones: ["Koregaon Park", "Hinjewadi", "Baner", "Viman Nagar"],
+    description: "Explore available services and locations across Pune.",
+    status: "Available",
+  },
+  {
+    id: "chennai",
+    name: "Chennai",
+    tagline: "Gateway to South India",
+    hostsCount: 13,
+    popularZones: ["T Nagar", "Adyar", "Anna Nagar", "OMR"],
+    description: "Explore available services and locations across Chennai.",
+    status: "Available",
+  },
+  {
+    id: "lucknow",
+    name: "Lucknow",
+    tagline: "City of Nawabs",
+    hostsCount: 18,
+    popularZones: ["Hazratganj", "Gomti Nagar", "Aliganj", "Indira Nagar"],
+    description: "Explore available services and locations across Lucknow.",
+    status: "Available",
+  },
+  {
+    id: "agra",
+    name: "Agra",
+    tagline: "City of the Taj Mahal",
+    hostsCount: 21,
+    popularZones: ["Tajganj", "Sadar Bazaar", "Sanjay Place", "Fatehabad Road"],
+    description: "Explore available services and locations across Agra.",
+    status: "Available",
+  },
+  {
+    id: "kanpur",
+    name: "Kanpur",
+    tagline: "Major Industrial City",
+    hostsCount: 19,
+    popularZones: ["Swaroop Nagar", "Civil Lines", "Kakadeo", "Arya Nagar"],
+    description: "Explore available services and locations across Kanpur.",
+    status: "Available",
   },
 ];
 
 export const RajasthanCities: React.FC = () => {
-  const [selectedCityId, setSelectedCityId] = useState<string>('jaipur');
+  const [selectedCityId, setSelectedCityId] = useState<string>("jaipur");
 
-  const activeCity = RAJASTHAN_CITIES.find((c) => c.id === selectedCityId) || RAJASTHAN_CITIES[0];
+  const activeCity =
+    RAJASTHAN_CITIES.find((c) => c.id === selectedCityId) ||
+    RAJASTHAN_CITIES[0];
 
   return (
-    <section id="raj-cities" className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-950/60 backdrop-blur-sm text-slate-100 border-b border-pink-500/20">
+    <section
+      id="raj-cities"
+      className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-950/60 backdrop-blur-sm text-slate-100 border-b border-pink-500/20"
+    >
       <div className="max-w-7xl mx-auto space-y-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
@@ -157,14 +369,15 @@ export const RajasthanCities: React.FC = () => {
           </div>
 
           <h2 className="text-3xl sm:text-5xl font-serif font-extrabold text-white tracking-tight">
-            Service Availability Across{' '}
+            Service Availability Across{" "}
             <span className="bg-gradient-to-r from-pink-300 via-rose-400 to-amber-300 bg-clip-text text-transparent">
               Cities in Rajasthan
             </span>
           </h2>
 
           <p className="text-slate-300 text-sm sm:text-base font-medium">
-            Select any city in Rajasthan below to view available verified hosts, active zones, and cash-on-delivery booking options.
+            Select any city in Rajasthan below to view available verified hosts,
+            active zones, and cash-on-delivery booking options.
           </p>
         </div>
 
@@ -181,7 +394,11 @@ export const RajasthanCities: React.FC = () => {
               className="w-full bg-slate-950 border border-pink-500/30 text-white font-bold text-base sm:text-lg rounded-2xl px-5 py-4 appearance-none focus:outline-none focus:border-pink-400 shadow-inner cursor-pointer transition-all"
             >
               {RAJASTHAN_CITIES.map((city) => (
-                <option key={city.id} value={city.id} className="bg-slate-950 text-white py-2">
+                <option
+                  key={city.id}
+                  value={city.id}
+                  className="bg-slate-950 text-white py-2"
+                >
                   📍 {city.name} ({city.hostsCount}+ Hosts Available)
                 </option>
               ))}
@@ -199,11 +416,11 @@ export const RajasthanCities: React.FC = () => {
                 onClick={() => setSelectedCityId(city.id)}
                 className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
                   selectedCityId === city.id
-                    ? 'bg-pink-500 text-slate-950 shadow-md shadow-pink-500/30 scale-105'
-                    : 'bg-slate-950 border border-slate-800 text-slate-300 hover:border-pink-500/40 hover:text-white'
+                    ? "bg-pink-500 text-slate-950 shadow-md shadow-pink-500/30 scale-105"
+                    : "bg-slate-950 border border-slate-800 text-slate-300 hover:border-pink-500/40 hover:text-white"
                 }`}
               >
-                {city.name.split(' ')[0]}
+                {city.name.split(" ")[0]}
               </button>
             ))}
           </div>
@@ -270,7 +487,7 @@ export const RajasthanCities: React.FC = () => {
                   className="py-3 px-4 bg-gradient-to-r from-rose-500 via-pink-500 to-fuchsia-600 hover:brightness-110 text-white font-bold rounded-xl text-xs shadow-lg shadow-pink-500/20 flex items-center justify-center space-x-2"
                 >
                   <PhoneCall className="w-4 h-4" />
-                  <span>Call {activeCity.name.split(' ')[0]} Desk</span>
+                  <span>Call {activeCity.name.split(" ")[0]} Desk</span>
                 </a>
 
                 <a
@@ -280,7 +497,7 @@ export const RajasthanCities: React.FC = () => {
                   className="py-3 px-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-xs shadow-lg shadow-emerald-500/20 flex items-center justify-center space-x-2"
                 >
                   <MessageCircle className="w-4 h-4" />
-                  <span>WhatsApp {activeCity.name.split(' ')[0]}</span>
+                  <span>WhatsApp {activeCity.name.split(" ")[0]}</span>
                 </a>
               </div>
             </div>

@@ -1,7 +1,22 @@
-import React from 'react';
-import { X, SlidersHorizontal, Trash2, PhoneCall, MapPin, Users, Clock, ShieldCheck, Star, MessageCircle } from 'lucide-react';
-import { CallCenterFacility } from '../types';
-import { SITE_PHONE_RAW, SITE_WHATSAPP_RAW, BRAND_NAME } from '../config/siteConfig';
+import React from "react";
+import {
+  X,
+  SlidersHorizontal,
+  Trash2,
+  PhoneCall,
+  MapPin,
+  Users,
+  Clock,
+  ShieldCheck,
+  Star,
+  MessageCircle,
+} from "lucide-react";
+import { CallCenterFacility } from "../types";
+import {
+  SITE_PHONE_RAW,
+  SITE_WHATSAPP_RAW,
+  BRAND_NAME,
+} from "../config/siteConfig";
 
 interface CallCenterCompareModalProps {
   compareList: CallCenterFacility[];
@@ -33,7 +48,11 @@ export const CallCenterCompareModal: React.FC<CallCenterCompareModalProps> = ({
                 Side-by-Side Host Comparison
               </h2>
               <p className="text-xs text-slate-400">
-                Comparing <strong className="text-pink-300 font-mono">{compareList.length}</strong> verified hosts & companions
+                Comparing{" "}
+                <strong className="text-pink-300 font-mono">
+                  {compareList.length}
+                </strong>{" "}
+                verified hosts & companions
               </p>
             </div>
           </div>
@@ -66,11 +85,18 @@ export const CallCenterCompareModal: React.FC<CallCenterCompareModalProps> = ({
               </div>
 
               {compareList.map((facility) => {
-                const rawPhone = facility.phoneNumber ? facility.phoneNumber.replace(/[^0-9]/g, '') : SITE_PHONE_RAW;
-                const rawWhatsapp = facility.whatsappNumber ? facility.whatsappNumber.replace(/[^0-9]/g, '') : SITE_WHATSAPP_RAW;
+                const rawPhone = facility.phoneNumber
+                  ? facility.phoneNumber.replace(/[^0-9]/g, "")
+                  : SITE_PHONE_RAW;
+                const rawWhatsapp = facility.whatsappNumber
+                  ? facility.whatsappNumber.replace(/[^0-9]/g, "")
+                  : SITE_WHATSAPP_RAW;
 
                 return (
-                  <div key={facility.id} className="space-y-2 relative bg-slate-950 p-4 rounded-2xl border border-slate-800">
+                  <div
+                    key={facility.id}
+                    className="space-y-2 relative bg-slate-950 p-4 rounded-2xl border border-slate-800"
+                  >
                     <button
                       onClick={() => onRemove(facility.id)}
                       className="absolute top-2 right-2 p-1 rounded-lg bg-slate-900 text-slate-400 hover:text-rose-400 z-10"
@@ -140,7 +166,7 @@ export const CallCenterCompareModal: React.FC<CallCenterCompareModalProps> = ({
               </div>
               {compareList.map((f) => (
                 <div key={f.id} className="font-medium text-pink-300">
-                  {f.languages.join(', ')}
+                  {f.languages.join(", ")}
                 </div>
               ))}
             </div>
@@ -152,9 +178,14 @@ export const CallCenterCompareModal: React.FC<CallCenterCompareModalProps> = ({
                 <span>User Rating</span>
               </div>
               {compareList.map((f) => (
-                <div key={f.id} className="font-mono font-bold text-white text-sm flex items-center space-x-1">
+                <div
+                  key={f.id}
+                  className="font-mono font-bold text-white text-sm flex items-center space-x-1"
+                >
                   <span>{f.rating}</span>
-                  <span className="text-slate-400 text-[10px]">({f.reviewCount} reviews)</span>
+                  <span className="text-slate-400 text-[10px]">
+                    ({f.reviewCount} reviews)
+                  </span>
                 </div>
               ))}
             </div>
@@ -166,7 +197,10 @@ export const CallCenterCompareModal: React.FC<CallCenterCompareModalProps> = ({
                 <span>Avg Response Time</span>
               </div>
               {compareList.map((f) => (
-                <div key={f.id} className="font-mono font-bold text-emerald-400">
+                <div
+                  key={f.id}
+                  className="font-mono font-bold text-emerald-400"
+                >
                   &lt; {f.responseRateMinutes} mins
                 </div>
               ))}
@@ -179,7 +213,10 @@ export const CallCenterCompareModal: React.FC<CallCenterCompareModalProps> = ({
                 <span>Safety & Verification</span>
               </div>
               {compareList.map((f) => (
-                <div key={f.id} className="text-emerald-300 leading-relaxed text-[11px] font-semibold">
+                <div
+                  key={f.id}
+                  className="text-emerald-300 leading-relaxed text-[11px] font-semibold"
+                >
                   {f.slaAndCompliance}
                 </div>
               ))}
